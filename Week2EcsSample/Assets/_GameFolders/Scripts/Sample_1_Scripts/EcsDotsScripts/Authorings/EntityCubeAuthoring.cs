@@ -27,4 +27,24 @@ namespace Sample_1_Scripts
             }
         }
     }
+
+    public class Araba
+    {
+        readonly Input _input = new Input();
+
+        // public Araba()
+        // {
+        //     _input = new Input();
+        // }
+
+        // public void CreateInput()
+        // {
+        //     _input = new Input();
+        // }
+    }
+
+    public class Input
+    {
+        
+    }
 }

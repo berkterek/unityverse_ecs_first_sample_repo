@@ -28,6 +28,6 @@ namespace Sample_1_Scripts
             quaternion increaseRotation = quaternion.Euler(0f, _moveDataRO.ValueRO.Speed * deltaTime, 0f);
             _localTransformRW.ValueRW.Rotation = math.mul(currentRotation, increaseRotation);
         }
-    }    
+    }
 }
 

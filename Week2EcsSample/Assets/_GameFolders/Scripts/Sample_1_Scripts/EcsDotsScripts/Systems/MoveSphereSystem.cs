@@ -11,10 +11,14 @@ namespace Sample_1_Scripts
         public void OnUpdate(ref SystemState state)
         {
             float deltaTime = SystemAPI.Time.DeltaTime;
-            float3 direction = new float3(1f, 0f, 0f);
-            foreach (var (moveData, localTransform, cubeTag) in SystemAPI.Query<RefRO<MoveData>, RefRW<LocalTransform>, RefRO<SphereTag>>())
+            // float3 direction = new float3(1f, 0f, 0f);
+            // foreach (var (moveData, localTransform, cubeTag) in SystemAPI.Query<RefRO<MoveData>, RefRW<LocalTransform>, RefRO<SphereTag>>())
+            // {
+            //     localTransform.ValueRW.Position += deltaTime * moveData.ValueRO.Speed * direction;
+            // }
+            foreach (var sphereMovementAspect in SystemAPI.Query<SphereMovementAspect>())
             {
-                localTransform.ValueRW.Position += deltaTime * moveData.ValueRO.Speed * direction;
+                sphereMovementAspect.MoveProcess(deltaTime);
             }
         }
     }
