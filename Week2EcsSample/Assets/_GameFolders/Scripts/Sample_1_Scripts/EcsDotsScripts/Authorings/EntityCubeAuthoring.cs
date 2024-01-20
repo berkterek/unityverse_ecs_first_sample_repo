@@ -17,6 +17,9 @@ namespace Sample_1_Scripts
             public override void Bake(EntityCubeAuthoring authoring)
             {
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
+
+                AddComponent<CubeTag>(entity);
+                
                 AddComponent(entity, new MoveData()
                 {
                     Speed = authoring.Speed

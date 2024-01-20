@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Sample_1_Scripts
 {
-    public class StaticCubeAuthoring : MonoBehaviour
+    public class MyStaticEntityAuthoring : MonoBehaviour
     {
-        class StaticCubeBaker : Baker<StaticCubeAuthoring>
+        class MyStaticEntityBaker : Baker<MyStaticEntityAuthoring>
         {
-            public override void Bake(StaticCubeAuthoring authoring)
+            public override void Bake(MyStaticEntityAuthoring authoring)
             {
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
             }

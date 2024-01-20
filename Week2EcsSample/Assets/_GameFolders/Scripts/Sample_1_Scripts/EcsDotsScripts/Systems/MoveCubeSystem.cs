@@ -12,7 +12,7 @@ namespace Sample_1_Scripts
         {
             float deltaTime = SystemAPI.Time.DeltaTime;
             float3 direction = new float3(0f, 0f, 1f);
-            foreach (var (moveData, localTransform) in SystemAPI.Query<RefRO<MoveData>, RefRW<LocalTransform>>())
+            foreach (var (moveData, localTransform, cubeTag) in SystemAPI.Query<RefRO<MoveData>, RefRW<LocalTransform>, RefRO<CubeTag>>())
             {
                 localTransform.ValueRW.Position += deltaTime * moveData.ValueRO.Speed * direction;
             }
@@ -22,5 +22,5 @@ namespace Sample_1_Scripts
             //     localTransform.ValueRW.Position += deltaTime * direction;
             // }
         }
-    }    
+    }
 }
