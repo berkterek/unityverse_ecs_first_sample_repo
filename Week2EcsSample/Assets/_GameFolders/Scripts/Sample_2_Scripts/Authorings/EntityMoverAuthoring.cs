@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Sample_2_Scripts
 {
-    public class EntityCubeAuthoring : MonoBehaviour
+    public class EntityMoverAuthoring : MonoBehaviour
     {
         public float Speed = 2f;
         
-        class EntityCubeBaker : Baker<EntityCubeAuthoring>
+        class EntityMoverBaker : Baker<EntityMoverAuthoring>
         {
-            public override void Bake(EntityCubeAuthoring authoring)
+            public override void Bake(EntityMoverAuthoring authoring)
             {
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
 
