@@ -10,39 +10,65 @@ namespace Sample_2_Scripts
     {
         public void OnCreate(ref SystemState state)
         {
-            
+            state.RequireForUpdate<BeginSimulationEntityCommandBufferSystem.Singleton>();
         }
 
         public void OnUpdate(ref SystemState state)
         {
             float deltaTime = SystemAPI.Time.DeltaTime;
-            //EntityCommandBuffer ecs dots yaklasimda paralel yaklasimlar oldugundan dolayi add component set component veya yeni spawner ile yeni bir entity olusturmak datayi kaybetmeden direkt dogru bir sekilde main thread'e gondermemiz gerekir ve direkt Update icinde bu islemleri direkt kullanmak cok dogru degildir bunun yerine ister paralel ister normal Run veya Update icinde tavsiye edilen yontem EntityCommandBuffer'dir bu bizim icin islemleri bir anlik veya kalici bir memory tampon bolgeisi acar islemleri direkt main thread uzeride degil once bu memory doldurur ornegin yeni entity olusrumak gibi ve bu memory aliani Update islemini bitirince direkt memory icindeki tum islemleri tek seferde calistirir ve main thread uzeride dogru ve tek seferde calistirir isi bitmis olan entity command buffer'i ise dispose ederiz memory leak olmamamsi icin
-            var entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
-            foreach (var (spawnEntityData, timeData, localTransform) in SystemAPI
-                         .Query<RefRO<SpawnEntityData>, RefRW<SpawnerTimeData>, RefRO<LocalTransform>>())
+            var entityCommandBufferSystem =
+                SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>();
+            var entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer(state.WorldUnmanaged);
+
+            foreach (var (spawnEntityData,timeData,localTransform) in SystemAPI.Query<RefRO<SpawnEntityData>, RefRW<SpawnerTimeData>, RefRO<LocalTransform>>())
             {
                 timeData.ValueRW.CurrentTime += deltaTime;
 
-                if (timeData.ValueRO.CurrentTime < timeData.ValueRO.MaxTime) return;
+                if (timeData.ValueRO.CurrentTime < timeData.ValueRO.MaxTime) continue;
 
                 timeData.ValueRW.CurrentTime = 0f;
-
-                for (int i = 0; i < 10; i++)
+                
+                var newEntity = entityCommandBuffer.Instantiate(spawnEntityData.ValueRO.Entity);
+                
+                entityCommandBuffer.SetComponent(newEntity, new LocalTransform()
                 {
-                    var newEntity = entityCommandBuffer.Instantiate(spawnEntityData.ValueRO.Entity);
-                    entityCommandBuffer.SetComponent(newEntity, new LocalTransform()
-                    {
-                        Position = localTransform.ValueRO.Position,
-                        Rotation = localTransform.ValueRO.Rotation,
-                        Scale = localTransform.ValueRO.Scale
-                    });    
-                }
+                    Position = localTransform.ValueRO.Position,
+                    Rotation = localTransform.ValueRO.Rotation,
+                    Scale = localTransform.ValueRO.Scale
+                });
             }
-            
-            //playback method'u ile bu yapilan islemleri calisitir demis olduk
-            entityCommandBuffer.Playback(state.EntityManager);
-            //dispose ile memory leak olmamasi icin bu method'u caligiriyoruz
-            entityCommandBuffer.Dispose();
+        }
+
+        private void CustomCommandBuffer()
+        {
+            //EntityCommandBuffer ecs dots yaklasimda paralel yaklasimlar oldugundan dolayi add component set component veya yeni spawner ile yeni bir entity olusturmak datayi kaybetmeden direkt dogru bir sekilde main thread'e gondermemiz gerekir ve direkt Update icinde bu islemleri direkt kullanmak cok dogru degildir bunun yerine ister paralel ister normal Run veya Update icinde tavsiye edilen yontem EntityCommandBuffer'dir bu bizim icin islemleri bir anlik veya kalici bir memory tampon bolgeisi acar islemleri direkt main thread uzeride degil once bu memory doldurur ornegin yeni entity olusrumak gibi ve bu memory aliani Update islemini bitirince direkt memory icindeki tum islemleri tek seferde calistirir ve main thread uzeride dogru ve tek seferde calistirir isi bitmis olan entity command buffer'i ise dispose ederiz memory leak olmamamsi icin
+            // var entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
+            // foreach (var (spawnEntityData, timeData, localTransform) in SystemAPI
+            //              .Query<RefRO<SpawnEntityData>, RefRW<SpawnerTimeData>, RefRO<LocalTransform>>())
+            // {
+            //     timeData.ValueRW.CurrentTime += deltaTime;
+            //
+            //     //tek spawner ayni max time if sorgusu
+            //     //if (timeData.ValueRO.CurrentTime < timeData.ValueRO.MaxTime) break;
+            //     
+            //     //coklu spawner veya random max time
+            //     if (timeData.ValueRO.CurrentTime < timeData.ValueRO.MaxTime) continue;
+            //
+            //     timeData.ValueRW.CurrentTime = 0f;
+            //
+            //     var newEntity = entityCommandBuffer.Instantiate(spawnEntityData.ValueRO.Entity);
+            //     entityCommandBuffer.SetComponent(newEntity, new LocalTransform()
+            //     {
+            //         Position = localTransform.ValueRO.Position,
+            //         Rotation = localTransform.ValueRO.Rotation,
+            //         Scale = localTransform.ValueRO.Scale
+            //     });  
+            // }
+            //
+            // //playback method'u ile bu yapilan islemleri calisitir demis olduk
+            // entityCommandBuffer.Playback(state.EntityManager);
+            // //dispose ile memory leak olmamasi icin bu method'u caligiriyoruz
+            // entityCommandBuffer.Dispose();
         }
 
         private void NotRecommendedWay()
