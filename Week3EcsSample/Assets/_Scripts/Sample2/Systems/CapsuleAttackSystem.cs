@@ -19,7 +19,7 @@ namespace Sample2
         {
             float deltaTime = SystemAPI.Time.DeltaTime;
             var entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
-            foreach (var (attackTag, attackData, entity) in SystemAPI.Query<RefRO<AttackTag>,RefRW<AttackData>>().WithDisabled<MoveTag>().WithEntityAccess())
+            foreach (var (attackTag, attackData, entity) in SystemAPI.Query<RefRO<AttackTag>,RefRW<AttackData>>().WithEntityAccess())
             {
                 Debug.Log("Attack State");
                 attackData.ValueRW.Timer += deltaTime;
