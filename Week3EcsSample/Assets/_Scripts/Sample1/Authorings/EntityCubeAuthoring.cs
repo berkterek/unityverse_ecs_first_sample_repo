@@ -28,7 +28,8 @@ namespace Sample1
 
                 AddComponent(entity, new MoveData()
                 {
-                    Speed = 1f,
+                    MoveSpeed = 1f,
+                    RotateSpeed = 5f
                 });
 
                 //seed bize random bir sayi doner ama spawn islemlerinde ayni seed numarasi uzerinden bize donus olucaktir o yuzden her entity'inin unique bir seed olmasi icin Index + Version toplaimi her entity'inin id'sidir ve seed + id bize butun entity'lere unique bir seed vermemizi saglicaktir

@@ -50,17 +50,22 @@ namespace Sample1
             //     localTransform.ValueRW.Position += moveData.ValueRO.Speed * deltaTime * direction;
             // }
 
-            var job = new CubeMoveJob()
-            {
-                DeltaTime = deltaTime
-            };
+            // var job = new CubeMoveJob()
+            // {
+            //     DeltaTime = deltaTime
+            // };
 
             //Run main thread uzerinde calisir
             //Schedule main thread disinda ayri bir cekirdek veya worker uzerinde calisir eger uc kere arka arkaya caliscaksa veya tum islerini bir worker'a yukler islem bitince main thread'e doner 
             //ScheduleParallel ise main thread'den ayri bir cekirdek uzerinde calir schedule'dan farki bir worker uzerinde degil bircok worker uzeridne calisir islem bitince main thread'e doner
             // job.Run();
             //job.Schedule();
-            job.ScheduleParallel();
+            //job.ScheduleParallel();
+
+            new CubeMoveJobWithAspect
+            {
+                DeltaTime = deltaTime
+            }.ScheduleParallel();
         }
     }
 
@@ -87,7 +92,19 @@ namespace Sample1
 
             var direction = math.normalize(randomDestination - localTransform.Position);
 
-            localTransform.Position += moveData.Speed * DeltaTime * direction;
+            localTransform.Position += moveData.MoveSpeed * DeltaTime * direction;
+        }
+    }
+
+    [BurstCompile]
+    public partial struct CubeMoveJobWithAspect : IJobEntity
+    {
+        public float DeltaTime;
+        
+        [BurstCompile]
+        private void Execute(CubeEntityAspect cubeEntityAspect)
+        {
+            cubeEntityAspect.MoveProcess(DeltaTime);
         }
     }
 }
