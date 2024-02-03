@@ -1,5 +1,5 @@
+using _Scripts.Aspects;
 using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -58,21 +58,11 @@ namespace Sample1
         public EntityCommandBuffer.ParallelWriter Ecb;
         
         [BurstCompile]
-        private void Execute(Entity entity, ref SpawnData spawnData, ref RandomData randomData, DynamicBuffer<SpawnEntityBufferData> spawnEntityBufferDatas, [ChunkIndexInQuery]int sortKey)
+        private void Execute(EntitySpawnAspect aspect, [ChunkIndexInQuery]int sortKey)
         {
-            spawnData.CurrentTime += DeltaTime;
-
-            if (spawnData.CurrentTime < spawnData.MaxSpawnTime) return;
+            if (!aspect.CanSpawn(DeltaTime)) return;
             
-            spawnData.CurrentTime = 0f;
-            
-            var newEntity = Ecb.Instantiate(sortKey,spawnEntityBufferDatas[randomData.Random.NextInt(0, spawnEntityBufferDatas.Length)].Entity);
-            Ecb.SetComponent(sortKey,newEntity, new LocalTransform()
-            {
-                Position = spawnData.SpawnPosition,
-                Rotation = quaternion.identity,
-                Scale = 1f
-            });
+            aspect.SpawnProcess(Ecb, sortKey);
         }
     }
 }
