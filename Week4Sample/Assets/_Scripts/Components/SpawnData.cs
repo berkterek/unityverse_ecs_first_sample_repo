@@ -9,9 +9,4 @@ namespace Sample1
         public float CurrentTime;
         public float3 SpawnPosition;
     }
-
-    public struct SpawnEntityData : IComponentData
-    {
-        public Entity Entity;
-    }
 }

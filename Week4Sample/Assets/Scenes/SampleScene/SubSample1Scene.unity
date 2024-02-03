@@ -152,7 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e6364790d524e509695dd3c7bbecc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 557380192250904356, guid: 5ff01f1065aa441be8cefcaf42e48f57, type: 3}
+  Prefabs:
+  - {fileID: 557380192250904356, guid: 7af19a7e328534664bf19eb340679e6c, type: 3}
+  - {fileID: 557380192250904356, guid: 5ff01f1065aa441be8cefcaf42e48f57, type: 3}
+  - {fileID: 557380192250904356, guid: e255319f0889840cab48b93b39244ed8, type: 3}
   MaxSpawnTime: 3
   SpawnPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1358435060
