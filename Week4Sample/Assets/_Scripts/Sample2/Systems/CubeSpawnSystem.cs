@@ -23,9 +23,9 @@ namespace Sample2
 
             new CubeSpawnJob
             {
-                Ecb = ecb,
+                Ecb = ecb.AsParallelWriter(),
                 DeltaTime = deltaTime
-            }.Schedule();
+            }.ScheduleParallel();
         }
     }
 
@@ -33,21 +33,21 @@ namespace Sample2
     public partial struct CubeSpawnJob : IJobEntity
     {
         public float DeltaTime;
-        public EntityCommandBuffer Ecb;
+        public EntityCommandBuffer.ParallelWriter Ecb;
         
         [BurstCompile]
-        private void Execute(Entity entity, ref SpawnTimeData spawnTimeData, ref SpawnEntityData spawnEntityData, ref RandomData randomData, in SpawnPositionsReference spawnPositionsReference)
+        private void Execute(Entity entity, ref SpawnTimeData spawnTimeData, ref SpawnEntityData spawnEntityData, ref RandomData randomData, in SpawnPositionsReference spawnPositionsReference, [ChunkIndexInQuery]int sortKey)
         {
             spawnTimeData.CurrentSpawnTime += DeltaTime;
             if (spawnTimeData.CurrentSpawnTime < spawnTimeData.MaxSpawnTime) return;
 
             spawnTimeData.CurrentSpawnTime = 0f;
             
-            var newEntity = Ecb.Instantiate(spawnEntityData.Entity);
+            var newEntity = Ecb.Instantiate(sortKey,spawnEntityData.Entity);
             var randomIndex = randomData.Random.NextInt(0,
                 spawnPositionsReference.BlobValueReference.Value.Values.Length);
             var position = spawnPositionsReference.BlobValueReference.Value.Values[randomIndex];
-            Ecb.SetComponent(newEntity, new LocalTransform()
+            Ecb.SetComponent(sortKey,newEntity, new LocalTransform()
             {
                 Position = position,
                 Rotation = quaternion.identity,
