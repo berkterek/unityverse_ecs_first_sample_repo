@@ -1,3 +1,4 @@
+using _Scripts.Sample2.Aspects;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -36,23 +37,11 @@ namespace Sample2
         public EntityCommandBuffer.ParallelWriter Ecb;
         
         [BurstCompile]
-        private void Execute(Entity entity, ref SpawnTimeData spawnTimeData, ref SpawnEntityData spawnEntityData, ref RandomData randomData, in SpawnPositionsReference spawnPositionsReference, [ChunkIndexInQuery]int sortKey)
+        private void Execute(CubeSpawnAspect aspect, [ChunkIndexInQuery]int sortKey)
         {
-            spawnTimeData.CurrentSpawnTime += DeltaTime;
-            if (spawnTimeData.CurrentSpawnTime < spawnTimeData.MaxSpawnTime) return;
-
-            spawnTimeData.CurrentSpawnTime = 0f;
+            if (!aspect.CanSpawn(DeltaTime)) return;
             
-            var newEntity = Ecb.Instantiate(sortKey,spawnEntityData.Entity);
-            var randomIndex = randomData.Random.NextInt(0,
-                spawnPositionsReference.BlobValueReference.Value.Values.Length);
-            var position = spawnPositionsReference.BlobValueReference.Value.Values[randomIndex];
-            Ecb.SetComponent(sortKey,newEntity, new LocalTransform()
-            {
-                Position = position,
-                Rotation = quaternion.identity,
-                Scale = 1f
-            });
+            aspect.SpawnProcess(Ecb, sortKey);
         }
     } 
 }
