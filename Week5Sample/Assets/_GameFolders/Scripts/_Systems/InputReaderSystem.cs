@@ -1,8 +1,11 @@
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Transforms;
 
 namespace SampleScripts
 {
+    [UpdateInGroup(typeof(SimulationSystemGroup))]
+    [UpdateBefore(typeof(TransformSystemGroup))]
     public partial class InputReaderSystem : SystemBase
     {
         IInputReader _inputReader;
