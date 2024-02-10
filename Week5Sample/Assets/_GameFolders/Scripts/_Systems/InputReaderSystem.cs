@@ -4,8 +4,7 @@ using Unity.Transforms;
 
 namespace SampleScripts
 {
-    [UpdateInGroup(typeof(SimulationSystemGroup))]
-    [UpdateBefore(typeof(TransformSystemGroup))]
+    [UpdateInGroup(typeof(SimulationSystemGroup), OrderFirst = true)]
     public partial class InputReaderSystem : SystemBase
     {
         IInputReader _inputReader;

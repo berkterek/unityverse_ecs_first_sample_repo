@@ -1,12 +1,11 @@
 using Unity.Burst;
 using Unity.Entities;
+using Unity.Physics;
 using Unity.Transforms;
 
 namespace SampleScripts
 {
-    [UpdateInGroup(typeof(SimulationSystemGroup))]
-    [UpdateAfter(typeof(InputReaderSystem))]
-    [UpdateBefore(typeof(TransformSystemGroup))]
+    [UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
     public partial struct MoveSystem : ISystem
     {
         [BurstCompile]
@@ -25,9 +24,10 @@ namespace SampleScripts
     {
         public float DeltaTime;
         
-        private void Execute(Entity entity, in InputData inputData, in MoveData moveData, ref LocalTransform localTransform)
+        private void Execute(Entity entity, in InputData inputData, in MoveData moveData, ref PhysicsVelocity physicsVelocity)
         {
-            localTransform.Position += DeltaTime * moveData.MoveSpeed * inputData.MoveInput;
+            //localTransform.Position += DeltaTime * moveData.MoveSpeed * inputData.MoveInput;
+            physicsVelocity.Linear += DeltaTime * moveData.MoveSpeed * inputData.MoveInput;
         }
     }
 }
