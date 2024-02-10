@@ -20,6 +20,11 @@ namespace SampleScripts
                 {
                     MoveSpeed = authoring.Stats.MoveSpeed
                 });
+                
+                AddComponent(entity, new DamageData()
+                {
+                    Damage = authoring.Stats.Damage
+                });
             }
         }
     }

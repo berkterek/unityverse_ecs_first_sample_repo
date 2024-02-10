@@ -1,7 +1,6 @@
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Physics;
-using Unity.Transforms;
 
 namespace SampleScripts
 {
@@ -20,11 +19,13 @@ namespace SampleScripts
         }
     }
 
+    [BurstCompile]
     public partial struct MoveJob : IJobEntity
     {
         public float DeltaTime;
         
-        private void Execute(Entity entity, in InputData inputData, in MoveData moveData, ref PhysicsVelocity physicsVelocity)
+        [BurstCompile]
+        void Execute(Entity entity, in InputData inputData, in MoveData moveData, ref PhysicsVelocity physicsVelocity)
         {
             //localTransform.Position += DeltaTime * moveData.MoveSpeed * inputData.MoveInput;
             physicsVelocity.Linear += DeltaTime * moveData.MoveSpeed * inputData.MoveInput;
