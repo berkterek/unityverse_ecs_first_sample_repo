@@ -4,6 +4,7 @@ using Unity.Physics;
 
 namespace SampleScripts
 {
+    [UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
     public partial struct PlayerOnColliderSystem : ISystem
     {
         struct ComponentDataHandler
@@ -29,7 +30,7 @@ namespace SampleScripts
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<EndSimulationEntityCommandBufferSystem.Singleton>();
+            state.RequireForUpdate<EndFixedStepSimulationEntityCommandBufferSystem.Singleton>();
             state.RequireForUpdate<SimulationSingleton>();
             _componentDataHandler = new ComponentDataHandler(ref state);
         }
@@ -38,7 +39,7 @@ namespace SampleScripts
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            var entityCommandBufferSystem = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
+            var entityCommandBufferSystem = SystemAPI.GetSingleton<EndFixedStepSimulationEntityCommandBufferSystem.Singleton>();
             var entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer(state.WorldUnmanaged);
             
             _componentDataHandler.Update(ref state);
