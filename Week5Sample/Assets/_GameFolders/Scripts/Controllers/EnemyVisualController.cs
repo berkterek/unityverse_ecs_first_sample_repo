@@ -1,4 +1,4 @@
-using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace SampleScripts
@@ -8,16 +8,16 @@ namespace SampleScripts
         [SerializeField] Transform _transform;
         [SerializeField] HealthBarController _healthBar;
 
-        World _ecsWorld;
+        public Transform Transform { get; private set; }
 
         void OnValidate()
         {
             if (_transform == null) _transform = GetComponent<Transform>();
         }
-        
-        void Awake()
+
+        public void SetPosition(float3 valueROPosition)
         {
-            _ecsWorld = World.DefaultGameObjectInjectionWorld;
+            _transform.position = new Vector3(valueROPosition.x, _transform.position.y, valueROPosition.z);
         }
     }
 }

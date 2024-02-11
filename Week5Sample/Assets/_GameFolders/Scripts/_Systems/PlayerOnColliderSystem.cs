@@ -88,7 +88,7 @@ namespace SampleScripts
                 {
                     var damage = DamageDataLookup.GetRefRO(entityA).ValueRO.Damage;
                     var damageBufferValue = damage * DeltaTime;
-                    Ecb.AppendToBuffer(entityA, new DamageBufferData()
+                    Ecb.AppendToBuffer(entityB, new DamageBufferData()
                     {
                         Value = damageBufferValue
                     });
