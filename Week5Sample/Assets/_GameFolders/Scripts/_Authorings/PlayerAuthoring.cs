@@ -5,6 +5,7 @@ namespace SampleScripts
 {
     public class PlayerAuthoring : MonoBehaviour
     {
+        public GameObject VisualPrefab;
         public EntityStats Stats;
         
         class PlayerBaker : Baker<PlayerAuthoring>
@@ -24,6 +25,11 @@ namespace SampleScripts
                 AddComponent(entity, new DamageData()
                 {
                     Damage = authoring.Stats.Damage
+                });
+
+                AddComponentObject(entity, new PlayerVisualObjectData()
+                {
+                    VisualObject = authoring.VisualPrefab
                 });
             }
         }
