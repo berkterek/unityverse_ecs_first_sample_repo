@@ -19,5 +19,10 @@ namespace SampleScripts
         {
             _transform.position = new Vector3(valueROPosition.x, _transform.position.y, valueROPosition.z);
         }
+
+        public void SetHealthValues(float currentHealth, float maxHealth)
+        {
+            _healthBar.SetHealthValues(currentHealth,maxHealth);
+        }
     }
 }
