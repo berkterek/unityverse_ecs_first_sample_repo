@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace SampleScripts
 {
+    [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial class PlayerVisualCreationSystem : SystemBase
     {
         protected override void OnCreate()

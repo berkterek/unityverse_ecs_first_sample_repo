@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace SampleScripts
@@ -18,6 +18,12 @@ namespace SampleScripts
         {
             yield return new WaitUntil(() => VirtualCameraController.Instance != null);
             VirtualCameraController.Instance.SetLookPoint(_lookPoint);
+        }
+
+        public void SetPosition(float3 position)
+        {
+            var vectorPosition = new Vector3(position.x, _transform.position.y, position.z);
+            _transform.position = vectorPosition;
         }
     }    
 }
