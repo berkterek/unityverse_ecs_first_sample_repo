@@ -25,9 +25,4 @@ namespace Sample1
             _transform.rotation = rotation;
         }
     }
-
-    public class VisualAnimation
-    {
-        
-    }
 }
