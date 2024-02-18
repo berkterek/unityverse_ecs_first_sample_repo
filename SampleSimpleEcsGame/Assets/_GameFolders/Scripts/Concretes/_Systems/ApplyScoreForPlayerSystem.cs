@@ -25,5 +25,10 @@ namespace EcsGame.Systems
                 OnScoreChanged?.Invoke(playerScoreData.ValueRO.Score);
             }
         }
+
+        protected override void OnDestroy()
+        {
+            OnScoreChanged = null;
+        }
     }
 }
