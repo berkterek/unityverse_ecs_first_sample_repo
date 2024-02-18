@@ -15,6 +15,7 @@ namespace Sample1
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
 
                 AddComponent<InputData>(entity);
+                AddComponent<SoldierTag>(entity);
 
                 AddComponent<MoveData>(entity, new()
                 {
