@@ -14,9 +14,9 @@ namespace Sample1
             if (_transform == null) _transform = GetComponent<Transform>();
         }
 
-        public void MoveAnimation(float speed)
+        public void MoveAnimation(float velocity)
         {
-            _animator.SetFloat(AnimatorConstHelper.Speed, speed);
+            _animator.SetFloat(AnimatorConstHelper.Speed, velocity,0.1f, Time.deltaTime);
         }
 
         public void SetPositionAndRotation(float3 position, quaternion rotation)

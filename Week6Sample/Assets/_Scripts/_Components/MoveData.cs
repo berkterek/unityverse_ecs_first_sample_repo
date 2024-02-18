@@ -5,5 +5,6 @@ namespace Sample1
     public struct MoveData : IComponentData
     {
         public float MoveSpeed;
+        public float Velocity;
     }
 }

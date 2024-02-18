@@ -19,7 +19,8 @@ namespace Sample1
 
                 AddComponent<MoveData>(entity, new()
                 {
-                    MoveSpeed = authoring.MoveSpeed
+                    MoveSpeed = authoring.MoveSpeed,
+                    Velocity = 0f
                 });
                 // AddComponent(entity, new MoveData()
                 // {
