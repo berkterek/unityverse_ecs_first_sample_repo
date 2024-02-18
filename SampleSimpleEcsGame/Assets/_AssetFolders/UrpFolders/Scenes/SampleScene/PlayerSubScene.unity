@@ -1141,6 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 4598933941865363354, guid: 5107da257ed69436187ca4d51a472646, type: 3}
+  MaxSpawnTime: 3
   Points:
   - {fileID: 1056337727}
   - {fileID: 1948520842}

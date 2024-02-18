@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2099699956574416241}
   - component: {fileID: 4973987458169168018}
   - component: {fileID: 4351079958433137885}
+  - component: {fileID: 5593892076388097457}
   m_Layer: 0
   m_Name: Collectable
   m_TagString: Untagged
@@ -281,3 +282,16 @@ MonoBehaviour:
         Tag07: 0
     m_SerializedVersion: 1
   m_SerializedVersion: 1
+--- !u!114 &5593892076388097457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4598933941865363354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e815ef7659264fd2960b4f8cd9b9b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 5

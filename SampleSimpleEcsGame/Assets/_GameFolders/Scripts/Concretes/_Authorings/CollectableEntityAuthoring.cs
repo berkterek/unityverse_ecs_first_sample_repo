@@ -16,9 +16,10 @@ namespace EcsGame.Authorings
                 
                 AddComponent<CollectableTag>(entity);
 
-                AddComponent<CollectData>(entity, new()
+                AddComponent(entity, new CollectData()
                 {
-                    Score = authoring.Score
+                    Score = authoring.Score,
+                    IsCollected = false
                 });
             }
         }

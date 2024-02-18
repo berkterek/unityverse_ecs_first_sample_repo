@@ -2,9 +2,8 @@ using Unity.Entities;
 
 namespace EcsGame.Components
 {
-    public struct CollectData : IComponentData
+    public struct PlayerScoreData : IComponentData
     {
         public int Score;
-        public bool IsCollected;
     }
 }

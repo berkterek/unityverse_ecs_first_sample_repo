@@ -1,7 +1,6 @@
 using EcsGame.Components;
 using Unity.Burst;
 using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace EcsGame.Systems
