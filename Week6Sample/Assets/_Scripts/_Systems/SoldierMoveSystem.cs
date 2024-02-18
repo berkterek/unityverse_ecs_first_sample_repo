@@ -29,18 +29,12 @@ namespace Sample1
         public float DeltaTime;
         
         [BurstCompile]
-        private void Execute(Entity entity, ref LocalTransform localTransform, ref MoveData moveData,
-            in InputData inputData)
+        private void Execute(SoldierMoveAspect soldierMoveAspect)
         {
-            moveData.Velocity = math.length(inputData.Direction);
+            if (!soldierMoveAspect.VelocityProcess()) return;
 
-            if (moveData.Velocity == 0f) return;
-            
-            var moveDirection = moveData.MoveSpeed * DeltaTime * inputData.Direction;
-            localTransform.Position += moveDirection;
-
-            var targetRotation = quaternion.LookRotation(moveDirection, new float3(0f, 1f, 0f));
-            localTransform.Rotation = math.slerp(localTransform.Rotation,targetRotation, 5f*DeltaTime);
+            var moveDirection = soldierMoveAspect.MoveProcess(DeltaTime);
+            soldierMoveAspect.RotationProcess(moveDirection,DeltaTime);
         }
     }
 }
