@@ -12,16 +12,25 @@ namespace Sample1
 
         protected override void OnCreate()
         {
+            RequireForUpdate<InputData>();
             _inputReader = new InputReader();
         }
 
         protected override void OnUpdate()
         {
-            foreach (var inputData in SystemAPI.Query<RefRW<InputData>>())
-            {
-                var newDirection = new float3(_inputReader.Direction.x, 0f, _inputReader.Direction.y);
-                inputData.ValueRW.Direction = newDirection;
-            }           
+            //Coklu islem
+            // foreach (var inputData in SystemAPI.Query<RefRW<InputData>>())
+            // {
+            //     var newDirection = new float3(_inputReader.Direction.x, 0f, _inputReader.Direction.y);
+            //     inputData.ValueRW.Direction = newDirection;
+            // }           
+
+            //Singleton yani tekli islem
+            var inputData = SystemAPI.GetSingleton<InputData>();
+            var newDirection = new float3(_inputReader.Direction.x, 0f, _inputReader.Direction.y);
+            inputData.Direction = newDirection;
+            
+            SystemAPI.SetSingleton(inputData);
         }
     }
 }
