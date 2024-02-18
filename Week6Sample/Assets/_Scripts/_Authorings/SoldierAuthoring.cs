@@ -5,6 +5,7 @@ namespace Sample1
 {
     public class SoldierAuthoring : MonoBehaviour
     {
+        public GameObject VisualPrefab;
         public float MoveSpeed = 5f;
         
         private class SoldierAuthoringBaker : Baker<SoldierAuthoring>
@@ -19,11 +20,15 @@ namespace Sample1
                 {
                     MoveSpeed = authoring.MoveSpeed
                 });
-
                 // AddComponent(entity, new MoveData()
                 // {
                 //     MoveSpeed = authoring.MoveSpeed
                 // });
+
+                AddComponentObject(entity, new SoldierVisualObjectData()
+                {
+                    PrefabObject = authoring.VisualPrefab
+                });
             }
         }
     }

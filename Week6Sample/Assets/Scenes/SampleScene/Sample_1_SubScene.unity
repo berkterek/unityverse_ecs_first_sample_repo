@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9bcbf165124a23b6f8ebc94999f94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VisualPrefab: {fileID: 440608698211240757, guid: 592900aeab8f040ec97a908f78d6cdbe,
+    type: 3}
   MoveSpeed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
