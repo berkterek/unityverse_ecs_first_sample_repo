@@ -24,14 +24,26 @@ namespace EcsGame.Systems
             var targetLocalTransform = SystemAPI.GetComponent<LocalTransform>(enemyTargetEntity);
             var targetPosition = targetLocalTransform.Position;
 
-            foreach (var (enemyTag,inputData, localTransform) in SystemAPI.Query<RefRO<EnemyTag>, RefRW<InputData>, RefRO<LocalTransform>>())
+            new FindTargetAndSetEnemyJob()
             {
-                if(math.distance(targetPosition, localTransform.ValueRO.Position) < 0.1f) continue;
+                TargetPosition = targetPosition
+            }.ScheduleParallel();
+        }
+    }
 
-                var targetDirection = targetPosition - localTransform.ValueRO.Position;
-                targetDirection = math.normalize(targetDirection);
-                inputData.ValueRW.Direction = targetDirection;
-            }
+    [BurstCompile]
+    public partial struct FindTargetAndSetEnemyJob : IJobEntity
+    {
+        public float3 TargetPosition;
+        
+        [BurstCompile]
+        private void Execute(in EnemyTag enemyTag, in LocalTransform localTransform, ref InputData inputData)
+        {
+            if(math.distance(TargetPosition, localTransform.Position) < 0.1f) return;
+
+            var targetDirection = TargetPosition - localTransform.Position;
+            targetDirection = math.normalize(targetDirection);
+            inputData.Direction = targetDirection;
         }
     }
 }

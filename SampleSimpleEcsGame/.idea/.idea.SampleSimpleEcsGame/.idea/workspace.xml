@@ -5,38 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/b850853953a59e02ef9424b40f2d7b6a.sceneWithBuildSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/b850853953a59e02ef9424b40f2d7b6a.sceneWithBuildSettings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/cb20a77590769904037409621052e284.sceneWithBuildSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/cb20a77590769904037409621052e284.sceneWithBuildSettings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/EnemySubScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/EnemySubScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/GameAreaSubScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/GameAreaSubScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemySpawnerAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemySpawnerAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyTargetAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyTargetAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTag.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTargetTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTargetTag.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/PhysicsMoverTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/PhysicsMoverTag.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/TransformMoverTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/TransformMoverTag.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/TransformMoveSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/TransformMoveSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/PlayerSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/PlayerSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/PhysicsMovementSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/PhysicsMovementSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708252556390</updated>
       <workItem from="1708252558276" duration="7719000" />
-      <workItem from="1709366814133" duration="2362000" />
+      <workItem from="1709366814133" duration="4101000" />
     </task>
     <servers />
   </component>
