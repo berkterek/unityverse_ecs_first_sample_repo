@@ -26,7 +26,7 @@ namespace EcsGame.Systems
         public float DeltaTime;
         
         [BurstCompile]
-        private void Execute(ref PhysicsVelocity physicsVelocity, in InputData inputData, in MoveData moveData)
+        private void Execute(ref PhysicsVelocity physicsVelocity, in InputData inputData, in MoveData moveData, in PhysicsMoverTag physicsMoverTag)
         {
             physicsVelocity.Linear += DeltaTime * moveData.MoveSpeed * inputData.Direction;
         }

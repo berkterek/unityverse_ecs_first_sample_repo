@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="" />
+    <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/b850853953a59e02ef9424b40f2d7b6a.sceneWithBuildSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/b850853953a59e02ef9424b40f2d7b6a.sceneWithBuildSettings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/cb20a77590769904037409621052e284.sceneWithBuildSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/cb20a77590769904037409621052e284.sceneWithBuildSettings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/EnemySubScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/EnemySubScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/GameAreaSubScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/GameAreaSubScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemySpawnerAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemySpawnerAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyTargetAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyTargetAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTargetTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/EnemyTargetTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/PhysicsMoverTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/PhysicsMoverTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/TransformMoverTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/TransformMoverTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/PlayerSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene/PlayerSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/PhysicsMovementSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/PhysicsMovementSystem.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,21 +50,29 @@
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/ScoreDisplayController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/CollectableEntityAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/CollectableEntitySpawnerAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyTargetAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2cXKbdzEj66o1p1kKLYr8ISZ9oi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -75,10 +116,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15015">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15015" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -95,6 +136,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708252556390</updated>
       <workItem from="1708252558276" duration="7719000" />
+      <workItem from="1709366814133" duration="2362000" />
     </task>
     <servers />
   </component>
@@ -104,6 +146,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

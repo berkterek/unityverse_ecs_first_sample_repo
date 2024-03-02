@@ -17,6 +17,7 @@ namespace EcsGame.Authorings
                 AddComponent<PlayerTag>(entity);
                 AddComponent<InputData>(entity);
                 AddComponent<PlayerScoreData>(entity);
+                AddComponent<PhysicsMoverTag>(entity);
 
                 AddBuffer<PlayerScoreBuffer>(entity);
                 
