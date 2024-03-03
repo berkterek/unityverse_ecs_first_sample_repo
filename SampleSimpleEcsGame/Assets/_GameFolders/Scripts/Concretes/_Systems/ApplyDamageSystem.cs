@@ -1,6 +1,7 @@
 using EcsGame.Components;
 using Unity.Burst;
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace EcsGame.Systems
@@ -23,7 +24,7 @@ namespace EcsGame.Systems
         {
             foreach (var damageBuffer in damageBuffers)
             {
-                healthData.CurrentHealth -= damageBuffer.DamageValue;
+                healthData.CurrentHealth -= math.max(0f,damageBuffer.DamageValue);
                 healthData.OnValueChanged = true;
             }
                 

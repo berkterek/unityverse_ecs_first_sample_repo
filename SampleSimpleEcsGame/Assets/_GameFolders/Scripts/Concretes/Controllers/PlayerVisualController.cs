@@ -1,4 +1,3 @@
-using System;
 using EcsGame.Systems;
 using Unity.Entities;
 using UnityEngine;

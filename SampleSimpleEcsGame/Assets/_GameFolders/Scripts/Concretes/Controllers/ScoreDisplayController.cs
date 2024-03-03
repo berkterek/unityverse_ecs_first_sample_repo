@@ -1,4 +1,3 @@
-using System;
 using EcsGame.Systems;
 using TMPro;
 using Unity.Entities;
@@ -10,16 +9,26 @@ namespace EcsGame.Controllers
     {
         [SerializeField] TMP_Text _scoreText;
 
+        ApplyScoreForPlayerSystem _applyScoreForPlayerSystem;
+
         void OnValidate()
         {
             if (_scoreText == null) _scoreText = GetComponent<TMP_Text>();
         }
 
-        void Start()
+        void Awake()
         {
-            World ecsWorld = World.DefaultGameObjectInjectionWorld;
-            var applyScoreForPlayerSystem = ecsWorld.GetExistingSystemManaged<ApplyScoreForPlayerSystem>();
-            applyScoreForPlayerSystem.OnScoreChanged += HandleOnScoreChanged;
+            _applyScoreForPlayerSystem= World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<ApplyScoreForPlayerSystem>();
+        }
+
+        void OnEnable()
+        {
+            _applyScoreForPlayerSystem.OnScoreChanged += HandleOnScoreChanged;
+        }
+
+        void OnDisable()
+        {
+            _applyScoreForPlayerSystem.OnScoreChanged -= HandleOnScoreChanged;
         }
 
         void HandleOnScoreChanged(int score)
