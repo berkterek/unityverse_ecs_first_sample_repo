@@ -421,7 +421,7 @@ MonoBehaviour:
     m_Template: {fileID: 0}
     m_CollisionResponse:
       m_Override: 0
-      m_Value: 0
+      m_Value: 1
     m_Friction:
       m_Override: 0
       m_Value:
@@ -578,6 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72ff87799bef44a3b39c00caead90ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   MoveSpeed: 15
 --- !u!114 &1362785810
 MonoBehaviour:

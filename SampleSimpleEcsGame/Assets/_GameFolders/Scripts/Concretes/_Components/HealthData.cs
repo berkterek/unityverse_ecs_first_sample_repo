@@ -6,5 +6,6 @@ namespace EcsGame.Components
     {
         public float MaxHealth;
         public float CurrentHealth;
+        public bool OnValueChanged;
     }
 }
