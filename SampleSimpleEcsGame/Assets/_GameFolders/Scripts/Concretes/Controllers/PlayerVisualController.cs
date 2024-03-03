@@ -1,3 +1,4 @@
+using EcsGame.Managers;
 using EcsGame.Systems;
 using Unity.Entities;
 using UnityEngine;
@@ -41,6 +42,14 @@ namespace EcsGame.Controllers
         void HandleOnHealthChanged(float currentHealth, float maxHealth)
         {
             _healthBarImage.fillAmount = currentHealth / maxHealth;
+            
+            if(GameManager.Instance != null)
+            {
+                if (currentHealth <= 0)
+                {
+                    GameManager.Instance.GameOver();
+                }
+            }
         }
     }    
 }

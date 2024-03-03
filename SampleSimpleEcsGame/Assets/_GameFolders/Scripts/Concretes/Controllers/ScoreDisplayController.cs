@@ -1,3 +1,4 @@
+using EcsGame.Managers;
 using EcsGame.Systems;
 using TMPro;
 using Unity.Entities;
@@ -34,6 +35,10 @@ namespace EcsGame.Controllers
         void HandleOnScoreChanged(int score)
         {
             _scoreText.SetText(score.ToString());
+
+            if (GameManager.Instance == null) return;
+            
+            GameManager.Instance.SetScore(score);
         }
     }    
 }
