@@ -8,6 +8,7 @@ namespace EcsGame.Authorings
     {
         public float MoveSpeed;
         public float Damage;
+        public float MaxDamageTime = 2f;
         
         class EnemyBaker : Baker<EnemyAuthoring>
         {
@@ -27,7 +28,9 @@ namespace EcsGame.Authorings
 
                 AddComponent<DamageData>(entity, new()
                 {
-                    Damage = authoring.Damage
+                    Damage = authoring.Damage,
+                    CurrentTime = authoring.MaxDamageTime,
+                    MaxTime = authoring.MaxDamageTime
                 });
             }
         }

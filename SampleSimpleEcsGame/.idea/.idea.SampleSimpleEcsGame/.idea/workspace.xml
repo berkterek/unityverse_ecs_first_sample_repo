@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/RotationTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/RotationTag.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/RotationSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/RotationSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageBuffer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/HealthData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/HealthData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,30 +42,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/berkterek/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/berkterek/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/berkterek/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/berkterek/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/berkterek/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/berkterek/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2023.2.8f1/Unity.app/Contents/MacOS/Unity" />
@@ -90,10 +93,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2055">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2055" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -111,6 +114,7 @@
       <updated>1708252556390</updated>
       <workItem from="1708252558276" duration="7719000" />
       <workItem from="1709366814133" duration="5703000" />
+      <workItem from="1709452805108" duration="7004000" />
     </task>
     <servers />
   </component>
@@ -122,5 +126,24 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs</url>
+          <line>69</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs" initialLine="69" containingFunctionPresentation="Method 'Execute'">
+            <startOffsets>
+              <option value="2534" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2535" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
