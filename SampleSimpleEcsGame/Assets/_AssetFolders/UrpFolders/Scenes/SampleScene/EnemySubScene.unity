@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 1222536118}
   - component: {fileID: 1222536119}
   m_Layer: 0
-  m_Name: EnemySpawnerEntity
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,6 +432,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83199d476e2c849e696e3026320ba30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxTime: 5
+  MaxCount: 3
+  Prefabs:
+  - {fileID: 8627954122301768154, guid: d4d3ed89ac6ba445f90eaf10b7110761, type: 3}
+  - {fileID: 1068003081639230692, guid: b793f5911e7ce4b5e801a13395821894, type: 3}
+  - {fileID: 3986815091658158549, guid: df4835fe13b144874945b4875e18976a, type: 3}
   Points:
   - {fileID: 245039364}
   - {fileID: 974172484}
