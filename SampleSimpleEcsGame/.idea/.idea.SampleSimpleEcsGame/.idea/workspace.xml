@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/TransformMoveSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/TransformMoveSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/RotationTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/RotationTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/RotationSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/RotationSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/FindTargetAndSetEnemySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708252556390</updated>
       <workItem from="1708252558276" duration="7719000" />
-      <workItem from="1709366814133" duration="4101000" />
+      <workItem from="1709366814133" duration="5703000" />
     </task>
     <servers />
   </component>

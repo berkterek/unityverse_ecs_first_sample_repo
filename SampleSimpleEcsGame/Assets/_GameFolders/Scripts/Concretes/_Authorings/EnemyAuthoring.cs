@@ -18,6 +18,7 @@ namespace EcsGame.Authorings
                 AddComponent<EnemyTag>(entity);
                 AddComponent<InputData>(entity);
                 AddComponent<TransformMoverTag>(entity);
+                AddComponent<RotationTag>(entity);
                 
                 AddComponent<MoveData>(entity, new ()
                 {
