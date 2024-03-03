@@ -66,6 +66,7 @@ namespace EcsGame.Systems
         public ComponentLookup<DamageData> DamageDataLookup;
         public float DeltaTime;
 
+        [BurstCompile]
         public void Execute(CollisionEvent collisionEvent)
         {
             var entityA = collisionEvent.EntityA;

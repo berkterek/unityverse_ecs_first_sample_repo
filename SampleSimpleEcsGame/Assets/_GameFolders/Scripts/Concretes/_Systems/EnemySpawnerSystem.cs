@@ -24,34 +24,51 @@ namespace EcsGame.Systems
                 SystemAPI.GetSingleton<EndInitializationEntityCommandBufferSystem.Singleton>();
             var entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer(state.WorldUnmanaged);
 
-            foreach (var (enemySpawnData, randomData, enemySpawnPositionReference, enemySpawnEntityBuffers, entity) in SystemAPI.Query<RefRW<EnemySpawnData>, RefRW<RandomData>, RefRO<EnemySpawnPositionReference>, DynamicBuffer<EnemySpawnEntityBuffer>>().WithEntityAccess())
+            new EnemySpawnerJob()
             {
-                enemySpawnData.ValueRW.CurrentTime += deltaTime;
-                if(enemySpawnData.ValueRO.CurrentTime < enemySpawnData.ValueRO.MaxTime) continue;
-                enemySpawnData.ValueRW.CurrentTime = 0f;
+                Ecb = entityCommandBuffer.AsParallelWriter(),
+                DeltaTime = deltaTime
+            }.ScheduleParallel();
+        }
+    }
 
-                var positionLength = enemySpawnPositionReference.ValueRO.BlobAssetReference.Value.Values.Length;
-                var randomPositionIndex = randomData.ValueRW.RandomValue.NextInt(0, positionLength);
-                var randomPosition =
-                    enemySpawnPositionReference.ValueRO.BlobAssetReference.Value.Values[randomPositionIndex];
-                
-                var entityLength = enemySpawnEntityBuffers.Length;
-                var randomEntityIndex = randomData.ValueRW.RandomValue.NextInt(0, entityLength);
-                var newEntity = entityCommandBuffer.Instantiate(enemySpawnEntityBuffers[randomEntityIndex].EnemyEntity);
-                
-                entityCommandBuffer.SetComponent(newEntity, new LocalTransform()
-                {
-                    Position = randomPosition,
-                    Rotation = quaternion.identity,
-                    Scale = 1f
-                });
+    [BurstCompile]
+    public partial struct EnemySpawnerJob : IJobEntity
+    {
+        public float DeltaTime;
+        public EntityCommandBuffer.ParallelWriter Ecb;
 
-                enemySpawnData.ValueRW.CurrentCount++;
+        [BurstCompile]
+        private void Execute(Entity entity, ref EnemySpawnData enemySpawnData,
+            in EnemySpawnPositionReference enemySpawnPositionReference,
+            DynamicBuffer<EnemySpawnEntityBuffer> enemySpawnEntityBuffers, ref RandomData randomData,
+            [ChunkIndexInQuery] int sortKey)
+        {
+            enemySpawnData.CurrentTime += DeltaTime;
+            if (enemySpawnData.CurrentTime < enemySpawnData.MaxTime) return;
+            enemySpawnData.CurrentTime = 0f;
 
-                if (enemySpawnData.ValueRO.CurrentCount >= enemySpawnData.ValueRO.MaxCount)
-                {
-                    entityCommandBuffer.RemoveComponent<EnemySpawnData>(entity);
-                }
+            var positionLength = enemySpawnPositionReference.BlobAssetReference.Value.Values.Length;
+            var randomPositionIndex = randomData.RandomValue.NextInt(0, positionLength);
+            var randomPosition =
+                enemySpawnPositionReference.BlobAssetReference.Value.Values[randomPositionIndex];
+
+            var entityLength = enemySpawnEntityBuffers.Length;
+            var randomEntityIndex = randomData.RandomValue.NextInt(0, entityLength);
+            var newEntity = Ecb.Instantiate(sortKey, enemySpawnEntityBuffers[randomEntityIndex].EnemyEntity);
+
+            Ecb.SetComponent(sortKey, newEntity, new LocalTransform()
+            {
+                Position = randomPosition,
+                Rotation = quaternion.identity,
+                Scale = 1f
+            });
+
+            enemySpawnData.CurrentCount++;
+
+            if (enemySpawnData.CurrentCount >= enemySpawnData.MaxCount)
+            {
+                Ecb.RemoveComponent<EnemySpawnData>(sortKey, entity);
             }
         }
     }
