@@ -6,6 +6,7 @@ namespace EcsGame.Authorings
 {
     public class PlayerAuthoring : MonoBehaviour
     {
+        public GameObject PlayerVisualPrefab;
         public float MaxHealth = 100f;
         public float MoveSpeed = 5f;
         
@@ -31,6 +32,11 @@ namespace EcsGame.Authorings
                 {
                     CurrentHealth = authoring.MaxHealth,
                     MaxHealth = authoring.MaxHealth
+                });
+                
+                AddComponentObject(entity, new VisualObjectData()
+                {
+                    VisualPrefab = authoring.PlayerVisualPrefab
                 });
             }
         }
