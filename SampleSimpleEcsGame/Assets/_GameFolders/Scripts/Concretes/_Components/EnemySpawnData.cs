@@ -9,4 +9,14 @@ namespace EcsGame.Components
         public int CurrentCount;
         public int MaxCount;
     }
+
+    public struct EnemyMaxCountBuffer : IBufferElementData
+    {
+        public int Value;
+    }
+    
+    public struct EnemyMaxTimeBuffer : IBufferElementData
+    {
+        public float Value;
+    }
 }

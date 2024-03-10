@@ -388,8 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83199d476e2c849e696e3026320ba30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 5
-  MaxCount: 3
+  LevelDataContainer: {fileID: 11400000, guid: c992420b3da6f4f4ab16bb04cab6275c, type: 2}
   Prefabs:
   - {fileID: 8627954122301768154, guid: d4d3ed89ac6ba445f90eaf10b7110761, type: 3}
   - {fileID: 1068003081639230692, guid: b793f5911e7ce4b5e801a13395821894, type: 3}

@@ -1,3 +1,4 @@
+using EcsGame.Components;
 using UnityEngine;
 
 namespace EcsGame
@@ -16,6 +17,8 @@ namespace EcsGame
         [SerializeField] int[] _maxScores;
 
         public int LevelIndex => _currentLevel - 1;
+        public float[] EnemyMaxTime => _enemySpawnTimes;
+        public int[] EnemyMaxCount => _enemyCounts;
 
         void OnEnable()
         {
@@ -31,8 +34,6 @@ namespace EcsGame
             if (LevelIndex >= _enemyCounts.Length) _currentLevel = 1;
         }
 
-        public int GetEnemyCount() => _enemyCounts[LevelIndex];
-        public float GetEnemySpawnTime() => _enemySpawnTimes[LevelIndex];
         public int GetMaxScore() => _maxScores[LevelIndex];
     }    
 }

@@ -6,4 +6,10 @@ namespace EcsGame.Components
     {
         public bool IsGameEnded;
     }
+
+    public struct GameLevelData : IComponentData
+    {
+        public int CurrentLevel;
+        public int MaxLevel;
+    }
 }

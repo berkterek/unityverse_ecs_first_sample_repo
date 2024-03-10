@@ -1417,6 +1417,10 @@ MonoBehaviour:
   _levelDataContainer: {fileID: 11400000, guid: c992420b3da6f4f4ab16bb04cab6275c,
     type: 2}
   _score: 0
+  _subScenes:
+  - {fileID: 1802197547}
+  - {fileID: 1362785806}
+  - {fileID: 669102774}
 --- !u!4 &1050164420
 Transform:
   m_ObjectHideFlags: 0

@@ -12,23 +12,29 @@ namespace EcsGame.Systems
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<EndInitializationEntityCommandBufferSystem.Singleton>();
+            state.RequireForUpdate<CanSpawnData>();
+            state.RequireForUpdate<BeginInitializationEntityCommandBufferSystem.Singleton>();
             state.RequireForUpdate<EnemySpawnData>();
         }
 
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            var canSpawnData = SystemAPI.GetSingleton<CanSpawnData>();
+            if (!canSpawnData.CanSpawn) return;
+
             float deltaTime = SystemAPI.Time.DeltaTime;
             var entityCommandBufferSystem =
-                SystemAPI.GetSingleton<EndInitializationEntityCommandBufferSystem.Singleton>();
+                SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>();
             var entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer(state.WorldUnmanaged);
 
-            new EnemySpawnerJob()
+            var job = new EnemySpawnerJob()
             {
                 Ecb = entityCommandBuffer.AsParallelWriter(),
                 DeltaTime = deltaTime
-            }.ScheduleParallel();
+            };
+
+            job.Schedule();
         }
     }
 

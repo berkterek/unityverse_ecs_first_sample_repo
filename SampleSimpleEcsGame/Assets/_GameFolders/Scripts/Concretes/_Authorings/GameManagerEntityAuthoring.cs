@@ -13,6 +13,12 @@ namespace EcsGame.Authorings
                 var entity = GetEntity(TransformUsageFlags.None);
                 
                 AddComponent<GameStatusData>(entity);
+                
+                AddComponent<GameLevelData>(entity, new()
+                {
+                    CurrentLevel = 1,
+                    MaxLevel = 3
+                });
             }
         }
     }

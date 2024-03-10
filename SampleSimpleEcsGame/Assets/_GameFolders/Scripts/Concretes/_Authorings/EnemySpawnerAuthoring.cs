@@ -7,8 +7,7 @@ namespace EcsGame.Authorings
 {
     public class EnemySpawnerAuthoring : MonoBehaviour
     {
-        public float MaxTime;
-        public int MaxCount;
+        public LevelDataContainerSO LevelDataContainer;
         public GameObject[] Prefabs;
         public Transform[] Points;
         
@@ -19,12 +18,13 @@ namespace EcsGame.Authorings
                 var entity = GetEntity(TransformUsageFlags.None);
 
                 AddComponent<GameOverDestroyTag>(entity);
+                AddComponent<CanSpawnData>(entity);
                 AddComponent<EnemySpawnData>(entity, new()
                 {
                     CurrentCount = 0,
                     CurrentTime = 0f,
-                    MaxCount = authoring.MaxCount,
-                    MaxTime = authoring.MaxTime
+                    MaxCount = authoring.LevelDataContainer.EnemyMaxCount[0],
+                    MaxTime = authoring.LevelDataContainer.EnemyMaxTime[0]
                 });
                 
                 uint seed = (uint)new System.Random().Next(0, int.MaxValue);
@@ -32,6 +32,26 @@ namespace EcsGame.Authorings
                 {
                     RandomValue = Unity.Mathematics.Random.CreateFromIndex(seed)
                 });
+
+                var countBuffer = AddBuffer<EnemyMaxCountBuffer>(entity);
+                int countLength = authoring.LevelDataContainer.EnemyMaxCount.Length;
+                for (int i = 0; i < countLength; i++)
+                {
+                    countBuffer.Add(new EnemyMaxCountBuffer()
+                    {
+                        Value = authoring.LevelDataContainer.EnemyMaxCount[i]
+                    });
+                }
+                
+                var timeBuffer = AddBuffer<EnemyMaxTimeBuffer>(entity);
+                int timeLength = authoring.LevelDataContainer.EnemyMaxTime.Length;
+                for (int i = 0; i < countLength; i++)
+                {
+                    timeBuffer.Add(new EnemyMaxTimeBuffer()
+                    {
+                        Value = authoring.LevelDataContainer.EnemyMaxTime[i]
+                    });
+                }
 
                 var buffer = AddBuffer<EnemySpawnEntityBuffer>(entity);
                 int enemyLength = authoring.Prefabs.Length;
