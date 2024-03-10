@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Abstracts/Uis.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Abstracts/Uis/BaseButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Abstracts/Uis/BaseButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/LevelChangeButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/LevelChangeButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/ScriptableObjects/LevelDataContainerSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/ScriptableObjects/LevelDataContainerSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/NextLevelButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/NextLevelButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/LevelChangeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/TryAgainButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/LevelChangeButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/TryAgainButton.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/PlayerVisualController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/ScoreDisplayController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/ScriptableObjects/LevelDataContainerSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/CanvasGroupHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/CollectableEntityAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/CollectableEntitySpawnerAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
@@ -120,7 +124,7 @@
       <workItem from="1709366814133" duration="5703000" />
       <workItem from="1709452805108" duration="12727000" />
       <workItem from="1709971155131" duration="607000" />
-      <workItem from="1710058165369" duration="3544000" />
+      <workItem from="1710058165369" duration="4693000" />
     </task>
     <servers />
   </component>

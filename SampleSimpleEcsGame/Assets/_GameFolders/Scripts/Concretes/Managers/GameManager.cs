@@ -5,10 +5,13 @@ namespace EcsGame.Managers
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] LevelDataContainerSO _levelDataContainer;
         [SerializeField] int _score;
-        [SerializeField] int _scoreMax;
 
+        int _maxScore;
+        
         public static GameManager Instance { get; private set; }
+        public LevelDataContainerSO LevelDataContainer => _levelDataContainer;
 
         public event System.Action OnFinishedGame;
         public event System.Action OnGameOvered;
@@ -16,6 +19,11 @@ namespace EcsGame.Managers
         void Awake()
         {
             Singleton();
+        }
+
+        void Start()
+        {
+            ChangeMaxScore();
         }
 
         private void Singleton()
@@ -35,7 +43,7 @@ namespace EcsGame.Managers
         {
             _score = score;
 
-            if (_score >= _scoreMax)
+            if (_score >= _maxScore)
             {
                 Debug.Log("Finish game");
                 OnFinishedGame?.Invoke();
@@ -57,6 +65,11 @@ namespace EcsGame.Managers
         private async void LoadSceneAsync()
         {
             await SceneManager.LoadSceneAsync(0);
+        }
+
+        public void ChangeMaxScore()
+        {
+            _maxScore = _levelDataContainer.GetMaxScore();
         }
     }
 }
