@@ -18,6 +18,7 @@ namespace EcsGame.Authorings
             {
                 var entity = GetEntity(TransformUsageFlags.None);
 
+                AddComponent<GameOverDestroyTag>(entity);
                 AddComponent<EnemySpawnData>(entity, new()
                 {
                     CurrentCount = 0,

@@ -15,6 +15,7 @@ namespace EcsGame.Authorings
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 
                 AddComponent<CollectableTag>(entity);
+                AddComponent<GameOverDestroyTag>(entity);
 
                 AddComponent(entity, new CollectData()
                 {

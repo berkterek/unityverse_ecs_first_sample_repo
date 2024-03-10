@@ -17,6 +17,8 @@ namespace EcsGame.Authorings
             public override void Bake(CollectableEntitySpawnerAuthoring authoring)
             {
                 var entity = GetEntity(TransformUsageFlags.None);
+                
+                AddComponent<GameOverDestroyTag>(entity);
 
                 uint seed = (uint)new System.Random().Next(0, int.MaxValue);
                 AddComponent(entity, new RandomData()

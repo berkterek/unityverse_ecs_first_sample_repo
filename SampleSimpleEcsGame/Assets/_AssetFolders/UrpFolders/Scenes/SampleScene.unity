@@ -1655,6 +1655,7 @@ GameObject:
   - component: {fileID: 1414438698}
   - component: {fileID: 1414438697}
   - component: {fileID: 1414438696}
+  - component: {fileID: 1414438699}
   - component: {fileID: 1414438695}
   m_Layer: 5
   m_Name: EndGamePanel
@@ -1697,6 +1698,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee6c865320f34a4da8cb49cc30735b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvasGroupHelper: {fileID: 1414438699}
+  _titleText: {fileID: 64463457}
+  _messageText: {fileID: 654252759}
+  _nextButton: {fileID: 1553034227}
+  _tryAgainButton: {fileID: 898288208}
 --- !u!225 &1414438696
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1705,9 +1711,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414438693}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1414438697
 MonoBehaviour:
@@ -1747,6 +1753,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414438693}
   m_CullTransparentMesh: 1
+--- !u!114 &1414438699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414438693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e8d943f256a4adaa1608ad9316cc48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvasGroup: {fileID: 1414438696}
 --- !u!1 &1553034227
 GameObject:
   m_ObjectHideFlags: 0
