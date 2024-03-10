@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0281b05f-cdcd-4649-86c4-50763633513c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageBuffer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageBuffer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/HealthData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/HealthData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/DamageData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/EndGamePanelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/EndGamePanelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/CanvasGroupHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/CanvasGroupHelper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SampleSimpleEcsGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_AssetFolders/UrpFolders/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +25,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/EndGamePanelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/PlayerVisualController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Controllers/ScoreDisplayController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/Uis/CanvasGroupHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/CollectableEntityAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/CollectableEntitySpawnerAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/EnemyTargetAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Authorings/PlayerAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Components/VisualObjectData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -93,10 +99,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2055">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="2055" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -114,7 +120,9 @@
       <updated>1708252556390</updated>
       <workItem from="1708252558276" duration="7719000" />
       <workItem from="1709366814133" duration="5703000" />
-      <workItem from="1709452805108" duration="7004000" />
+      <workItem from="1709452805108" duration="12727000" />
+      <workItem from="1709971155131" duration="607000" />
+      <workItem from="1710058165369" duration="704000" />
     </task>
     <servers />
   </component>
@@ -126,24 +134,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs</url>
-          <line>69</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Concretes/_Systems/DamageOnCollideSystem.cs" initialLine="69" containingFunctionPresentation="Method 'Execute'">
-            <startOffsets>
-              <option value="2534" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2535" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -9,6 +9,9 @@ namespace EcsGame.Managers
 
         public static GameManager Instance { get; private set; }
 
+        public event System.Action OnFinishedGame;
+        public event System.Action OnGameOvered;
+
         void Awake()
         {
             Singleton();
@@ -37,6 +40,7 @@ namespace EcsGame.Managers
                 //Stop game
                 //Ui show popup and next button 
                 Debug.Log("Finish game");
+                OnFinishedGame?.Invoke();
             }
         }
 
@@ -47,6 +51,7 @@ namespace EcsGame.Managers
             //Ui show popup and restart button 
             Debug.Log("Game over");
             _score = 0;
+            OnGameOvered?.Invoke();
         }
     }
 }
