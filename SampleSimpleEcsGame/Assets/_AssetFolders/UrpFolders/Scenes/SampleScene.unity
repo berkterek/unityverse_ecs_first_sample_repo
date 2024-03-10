@@ -915,7 +915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _SceneAsset: {fileID: 102900000, guid: 91e3aacf8061c440995493d87d658a21, type: 3}
   _HierarchyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  AutoLoadScene: 0
+  AutoLoadScene: 1
   _SceneGUID:
     Value:
       x: 4239015449
@@ -1157,6 +1157,7 @@ GameObject:
   - component: {fileID: 898288212}
   - component: {fileID: 898288211}
   - component: {fileID: 898288210}
+  - component: {fileID: 898288213}
   m_Layer: 5
   m_Name: TryAgainButton
   m_TagString: Untagged
@@ -1266,6 +1267,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898288208}
   m_CullTransparentMesh: 1
+--- !u!114 &898288213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898288208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0001697043544bd18720efc1c14e6cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 898288210}
 --- !u!1001 &953777729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1485,7 +1499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _SceneAsset: {fileID: 102900000, guid: 42b7a64ed44ef463aa6273098c650e6f, type: 3}
   _HierarchyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  AutoLoadScene: 0
+  AutoLoadScene: 1
   _SceneGUID:
     Value:
       x: 3832183588
@@ -1778,6 +1792,7 @@ GameObject:
   - component: {fileID: 1553034231}
   - component: {fileID: 1553034230}
   - component: {fileID: 1553034229}
+  - component: {fileID: 1553034232}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -1887,6 +1902,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553034227}
   m_CullTransparentMesh: 1
+--- !u!114 &1553034232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553034227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0001697043544bd18720efc1c14e6cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1553034229}
 --- !u!1 &1802197546
 GameObject:
   m_ObjectHideFlags: 0

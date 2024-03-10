@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EcsGame.Managers
 {
@@ -36,9 +37,6 @@ namespace EcsGame.Managers
 
             if (_score >= _scoreMax)
             {
-                //Finish game
-                //Stop game
-                //Ui show popup and next button 
                 Debug.Log("Finish game");
                 OnFinishedGame?.Invoke();
             }
@@ -46,12 +44,19 @@ namespace EcsGame.Managers
 
         public void GameOver()
         {
-            //Game Over
-            //Stop game
-            //Ui show popup and restart button 
             Debug.Log("Game over");
             _score = 0;
             OnGameOvered?.Invoke();
+        }
+
+        public void LoadScene()
+        {
+            LoadSceneAsync();
+        }
+
+        private async void LoadSceneAsync()
+        {
+            await SceneManager.LoadSceneAsync(0);
         }
     }
 }
